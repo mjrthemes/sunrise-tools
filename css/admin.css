@@ -1,0 +1,285 @@
+.mjrdesign_shortcodes_popup {
+	position: absolute !important;
+	top: 25px;
+	left: -154px;
+	padding: 7px 5px !important;
+	border: 1px solid #dfdfdf !important;
+	background: #f5f5f5 !important;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 14px;
+	display: none;
+	z-index: 2000;
+}
+
+	.mjrdesign_shortcodes_popup ul {
+		display: inline-block;
+		margin: 0 0 0 15px;
+		padding: 0 0 0 15px;
+		border-left: 1px dotted #dfdfdf;
+		vertical-align: top;
+	}
+
+	.mjrdesign_shortcodes_popup ul:first-child {
+		margin: 0;
+		padding: 0;
+		border-left: 0;
+	}
+
+	.mjrdesign_shortcodes_popup li {
+		padding: 5px;
+		cursor: pointer;
+	}
+
+	.mjrdesign_shortcodes_popup li.mjr_slideshow {
+		font-weight: bold;
+	}
+
+	.mjrdesign_shortcodes_popup li.skip {
+		height: 1px;
+		padding-top: 0;
+		border-bottom: 1px dotted #dfdfdf;
+	}
+
+	.mjrdesign_shortcodes_popup li strong {
+		font-weight: bold;
+		display: block;
+		padding: 0 0 3px 0;
+		border-bottom: 1px dotted #dfdfdf;
+	}
+
+
+.mjrdesign_large_popup {
+
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	height: 100% !important;
+	width: 100% !important;
+	background: rgba(0,0,0,0.3) !important;
+	z-index: 10000 !important;
+	display: none;
+
+}
+
+	.mjrdesign_large_popup > div {
+		position: absolute;
+		top: 50px;
+		bottom: 40px;
+		left: 50px;
+		right: 50px;
+		max-height: 100%;
+		border: 1px solid #dfdfdf;
+		background: #f9f9f9;
+		padding: 20px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		overflow-y: scroll;
+	}
+
+	.mjrdesign_large_popup ul {
+		-moz-column-count: 7; 
+		-webkit-column-count: 7;
+		column-count: 7;
+	}
+
+	.mjrdesign_large_popup li {
+		cursor: pointer;
+	}
+
+	.mjr-icons-list h2 {
+		padding: 20px 0;
+		margin: 0;
+	}
+	.mjr-icons-list li {
+		font-size: 16px;
+		padding: 5px 0;
+		color: #444;
+	}
+
+.at-text {
+	width: 300px;
+}
+
+.yith_banner {
+	display: none !important;
+}
+
+/* OPTION TREE */
+
+#page-ot_theme_options {
+	position: relative;
+}
+
+#option-tree-header-wrap {
+	position: absolute;
+}
+
+#option-tree-header {
+	display: none;
+}
+
+#option-tree-options-layouts-form {
+	top: 15px;
+	left: 0px;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 4px 10px 0 10px;
+	width: 680px;
+	background: #f9f9f9;
+}
+
+#option-tree-settings-api .ui-tabs {
+	max-width: 700px;
+	margin: 75px 0 0 0;
+
+  -webkit-border-radius: 0px;
+   -khtml-border-radius: 0px;
+     -moz-border-radius: 0px;
+       -o-border-radius: 0px;
+          border-radius: 0px;
+}
+#option-tree-sub-header {
+	width: 692px;
+	background: #555;
+	border: 0;
+	margin: 0 0 0 0;
+	display: none;
+}
+#option-tree-sub-header:before {
+	content: 'Theme Options';
+	display: block;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	margin: -8px 0 0 0;
+	left: 10px;
+	font-size: 17px;
+	font-weight: bold;
+}
+.option-tree-ui-buttons {
+  background: #444;
+  border: 0px solid #ccc;
+  margin: 0 0 0 0;
+  width: 692px;
+  overflow: hidden;
+  padding: 5px;
+  position: relative;
+  -webkit-border-radius: 0px;
+   -khtml-border-radius: 0px;
+     -moz-border-radius: 0px;
+       -o-border-radius: 0px;
+          border-radius: 0px;
+}
+
+.wrap.settings-wrap .ui-tabs-nav {
+	margin: 0;
+	width: 147px;
+	padding: 0px 0px 30px 0;
+}
+
+.ui-tabs-nav * {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.wrap.settings-wrap .ui-tabs-nav li {
+	border-bottom: 1px solid #ddd;
+	border-top: 0px;
+}
+
+.wrap.settings-wrap .ui-tabs-nav li a { 
+	color: #444;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+a:focus, a:active {
+	outline: none;
+}
+.wrap.settings-wrap .ui-tabs-nav li.ui-state-active {
+	background: #fff;
+	border-left: 0;
+	border-color: #ddd;
+}
+.wrap.settings-wrap .ui-tabs-nav li.ui-state-active a {
+	padding-left: 11px;
+	color: #222;
+}
+
+.wrap.settings-wrap .ui-tabs-nav li a {
+	padding: 15px 5px 15px 10px; 
+}
+
+#section_mjr_social .format-settings {
+	padding: 0 0 5px 0;
+}
+
+#option-tree-settings-api .format-setting.type-radio p {
+	display: inline-block;
+	width: 40%;
+	padding: 0 15px 0 0;
+}
+
+.preset_info {
+	float: left;
+	margin: 18px 0 0 0;
+	color: #666;
+}
+.option-tree-active-layout {
+	border-right: 0;
+	padding: 10px 0;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.option-tree-active-layout:before {
+	content: 'Layout:';
+	float: left;
+	padding: 5px 5px 0 0;
+}
+
+.option-tree-ui-buttons {
+	width: 692px;
+}
+
+.option-tree-save-layout {
+	float: right;
+}
+
+#option-tree-sub-header .option-tree-ui-button.blue, .option-tree-ui-buttons .option-tree-ui-button.blue {
+background: #00ce00; /* Old browsers */
+background: -moz-linear-gradient(top, #00ce00 0%, #14b200 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00ce00), color-stop(100%,#14b200)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #00ce00 0%,#14b200 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #00ce00 0%,#14b200 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #00ce00 0%,#14b200 100%); /* IE10+ */
+background: linear-gradient(to bottom, #00ce00 0%,#14b200 100%); /* W3C */
+
+
+
+border-color: #14b200;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+#option-tree-sub-header .option-tree-ui-button.blue.hover,
+#option-tree-sub-header .option-tree-ui-button.blue:hover,
+#option-tree-sub-header .option-tree-ui-button.blue.focus,
+#option-tree-sub-header .option-tree-ui-button.blue:focus
+.option-tree-ui-buttons .option-tree-ui-button.blue.hover,
+.option-tree-ui-buttons .option-tree-ui-button.blue:hover,
+.option-tree-ui-buttons .option-tree-ui-button.blue.focus,
+.option-tree-ui-buttons .option-tree-ui-button.blue:focus {
+background: #2ad321; /* Old browsers */
+background: -moz-linear-gradient(top, #2ad321 1%, #49ba2a 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#2ad321), color-stop(100%,#49ba2a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #2ad321 1%,#49ba2a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #2ad321 1%,#49ba2a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #2ad321 1%,#49ba2a 100%); /* IE10+ */
+background: linear-gradient(to bottom, #2ad321 1%,#49ba2a 100%); /* W3C */
+
+border-color: #49ba2a;
+text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+-webkit-box-shadow: none;
+box-shadow: none;
+}
