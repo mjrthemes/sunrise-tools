@@ -17,14 +17,6 @@ function mjr_add_options_submenu_page() {
           'mjr_options_css',                // admin page slug, e.g. options-general.php?page=mjr_options
           'mjr_options_page_css'            // callback function to display the options page
      );
-     add_submenu_page(
-          'options-general.php',          // admin page slug
-          __( 'Analytics Code', 'mjr' ), // page title
-          __( 'Analytics Code', 'mjr' ), // menu title
-          'manage_options',               // capability required to see the page
-          'mjr_options_analytics',                // admin page slug, e.g. options-general.php?page=mjr_options
-          'mjr_options_page_analytics'            // callback function to display the options page
-     );
 }
 add_action( 'admin_menu', 'mjr_add_options_submenu_page' );
  
@@ -35,10 +27,6 @@ function mjr_register_settings() {
      register_setting(
           'mjr_options_css',  // settings section
           'mjr_css' // setting name
-     );
-     register_setting(
-          'mjr_options_analytics',  // settings section
-          'mjr_analytics' // setting name
      );
 }
 add_action( 'admin_init', 'mjr_register_settings' );
@@ -69,60 +57,6 @@ function mjr_options_page_css() {
           </div> <!-- end poststuff -->
      </div>
 <?php }
-
-function mjr_options_page_analytics() {
-     if ( ! isset( $_REQUEST['settings-updated'] ) )
-          $_REQUEST['settings-updated'] = false; ?>
- 
-     <div class="wrap">
-           
-          <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
-           
-          <div id="poststuff">
-               <div id="post-body">
-                    <div id="post-body-content">
-                         <form method="post" action="options.php">
-                              <?php settings_fields( 'mjr_options_analytics' ); ?>
-                              <?php $mjr_analytics = get_option( 'mjr_analytics' ); ?>
-                              <label for="mjr_analytics"><h3>Analytics</h3></label>
-                              <textarea name="mjr_analytics" id="mjr_analytics" style="width: 100%; height: 350px;"><?php echo $mjr_analytics; ?></textarea>
-                              <?php submit_button(); ?>
-                         </form>
-                    </div> <!-- end post-body-content -->
-               </div> <!-- end post-body -->
-          </div> <!-- end poststuff -->
-     </div>
-<?php }
-
-function mjr_extra_customizer($wp_customize) {
-
-	$wp_customize->add_section('mjr_extra', array(
-	'title' => esc_html__('Custom Code', 'mjr'),
-	'description' => esc_html__('In this section you can change extra blocks', 'mjr'),
-	'priority' => 120,
-	));
-
-	$wp_customize->add_setting('mjr_css', array(
-	'capability' => 'edit_theme_options',
-	'type' => 'option',
-	));
-	$wp_customize->add_control( new Textarea_Custom_Control($wp_customize, 'mjr_css', array(
-	'label' => esc_html__('Custom CSS', 'mjr'),
-	'section' => 'mjr_extra',
-	'settings' => 'mjr_css',
-	)));
-
-	$wp_customize->add_setting('mjr_analytics', array(
-	'capability' => 'edit_theme_options',
-	'type' => 'option',
-	));
-	$wp_customize->add_control( new Textarea_Custom_Control($wp_customize, 'mjr_analytics', array(
-	'label' => esc_html__('Website Analytics', 'mjr'),
-	'section' => 'mjr_extra',
-	'settings' => 'mjr_analytics',
-	)));
-}
-add_action('customize_register', 'mjr_extra_customizer');
 
 // Getting values
 
@@ -285,8 +219,8 @@ function mjr_profile($atts, $content = null) {
 		$returned_button .= "<div class='profile-location'><i class='fa fa-map-marker'></i> ".$location."</div>";
 	}
 	$returned_button .= "<div class='profile-text'>".$content."</div>";
-	if(function_exists('mjr_social_images')) {
-		$returned_button .= mjr_social_images();
+	if(function_exists('sunrise_social_images')) {
+		$returned_button .= sunrise_social_images();
 	}
 	$returned_button .= "</div><!-- .mjr-profile -->";
 
