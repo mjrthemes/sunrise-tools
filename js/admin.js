@@ -2,14 +2,13 @@ jQuery(document).ready(function($) {
 
    $(document).on("click", ".mjr_upload_image_button", function() {
 
-        jQuery.data(document.body, 'prevElement', $('.mjr_profile_avatar'));
+        jQuery.data(document.body, 'prevElement', $(this).prev());
 
         window.send_to_editor = function(html) {
             var imgurl = jQuery(html).attr('src');
             var inputText = jQuery.data(document.body, 'prevElement');
 
-            if(inputText != undefined && inputText != '')
-            {
+            if(inputText != undefined && inputText != '') {
                 inputText.val(imgurl);
             }
 
