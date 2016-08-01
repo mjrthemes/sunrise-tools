@@ -32,11 +32,7 @@ class mjr_featured_post_widget extends WP_Widget {
 				$id = $instance['title'];
 			}
 			if(isset($instance['info'])) {
-				$content = $instance['info'];
-			}
-
-			if($content == '') {
-				$content = '<p>'.get_the_excerpt($id).'</p>';
+				$content = '<p>'.$instance['info'].'</p>';
 			}
 			
 			$categories = get_the_category($id);
@@ -65,7 +61,7 @@ class mjr_featured_post_widget extends WP_Widget {
 			$returned_button .= "<div class='postbox-text'>";
 			$returned_button .= "<h2>".$title."</h2>";
 			$returned_button .= $content;
-			$returned_button .= '<p>'.__("Continue Reading &rarr;", 'mjr').'</p>';
+			$returned_button .= '<p>'.__("Read Article &rarr;", 'mjr').'</p>';
 			$returned_button .= '</div>';
 			if(!empty($link)) {
 				$returned_button .= "</a>";

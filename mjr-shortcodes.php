@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Sunrise Tools
+Plugin Name: MJR Tools
 Plugin URI: https://major-themes.com/plugins/shortcodes
 Description: Bunch of useful shortcodes
 Version: 1.0.0
@@ -321,56 +321,3 @@ function col($atts, $content = null) {
 	return '<div class="grid-cell">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('col', 'col');
-
-/* Toggle */
-
-function mjr_toggle($atts, $content = null) {
-	extract(shortcode_atts(array("caption" => "Toggle", "collapsable" => "yes"), $atts));
-	$html = ''; 
-	if ($collapsable == "yes") {
-		$html .= '<div class="trigger-button"><span>' . $caption . '</span></div> <div class="accordion">';
-		$html .= mjr_no_wpautop($content);
-		$html .= '</div>';
-	}
-	else {
-		$html .= '<div class="toggle-wrap">';
-		$html .= '<span class="trigger"><a href="#">' . $caption . '</a></span><div class="toggle-container">';
-		$html .= mjr_no_wpautop($content);
-		$html .= '</div></div>';
-	}
-	return $html;
-}
-add_shortcode('toggle', 'mjr_toggle');
-
-/* Tabs */
-
-function mjr_tab( $atts, $content = null ) {
-
-	extract(shortcode_atts(array(
-		'title' => 'Tab'
-	), $atts ));
-										
-	return '<div id="tab-'. preg_replace('/[^A-Za-z0-9-]/' ,'', sanitize_title($title) ) .'">'. do_shortcode($content) .'</div>';
-}
-add_shortcode('tab', 'mjr_tab');
-
-function mjr_tabs( $atts, $content = null ) {
-
-	if( preg_match_all( '/\[tab[^\]]*title="([^\"]+)"[^\]]*\]/i', $content, $mjr_tabs ) ) {
-
-		$titles = '';
-		
-		foreach($mjr_tabs[1] as $mjr_single_tab) {
-			$titles.='<li><a href="#tab-'. preg_replace('/[^A-Za-z0-9-]/' ,'', sanitize_title($mjr_single_tab)) .'">'.$mjr_single_tab.'</a></li>';
-		}
-	}
-
-	$tabs = '
-	<div class="mjr-tabs">
-		<ul class="tabs-control">'.$titles.'</ul>
-		'.do_shortcode($content).'
-	</div>';
-			
-	return $tabs;
-}
-add_shortcode('tabs', 'mjr_tabs');
