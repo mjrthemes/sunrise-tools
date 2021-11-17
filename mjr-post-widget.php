@@ -2,7 +2,10 @@
 
 /* Profile Widget */
 
-add_action( 'widgets_init', create_function( '', 'register_widget("mjr_featured_post_widget");' ) );
+add_action ( 'widgets_init', 'mjr_featured_post_widget_init' );
+function mjr_featured_post_widget_init() {
+return register_widget('mjr_featured_post_widget');
+}
 
 class mjr_featured_post_widget extends WP_Widget {
 	 /**
