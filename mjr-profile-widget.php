@@ -2,7 +2,10 @@
 
 /* Profile Widget */
 
-add_action( 'widgets_init', create_function( '', 'register_widget("mjr_pu_media_upload_widget");' ) );
+add_action ( 'widgets_init', 'mjr_pu_media_upload_widget_init' );
+function mjr_pu_media_upload_widget_init() {
+return register_widget('mjr_pu_media_upload_widget');
+}
 
 class mjr_pu_media_upload_widget extends WP_Widget {
 	 /**
